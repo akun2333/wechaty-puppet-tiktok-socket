@@ -1,0 +1,12 @@
+import { Module } from '@nestjs/common'
+import { APP_FILTER } from '@nestjs/core'
+import { AllExceptionFilter } from './allException'
+import { HttpExceptionFilter } from './httpException'
+
+@Module({
+  providers: [
+    { provide: APP_FILTER, useClass: AllExceptionFilter },
+    { provide: APP_FILTER, useClass: HttpExceptionFilter },
+  ]
+})
+export class FilterModule { }

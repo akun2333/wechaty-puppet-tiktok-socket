@@ -1,0 +1,11 @@
+# IDE
+.vscode
+
+# git
+.git
+
+# compiled output
+/node_modules
+/dist
+/cache
+/logs

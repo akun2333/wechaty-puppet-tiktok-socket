@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OvO</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+      font-size: 25px;
+      font-weight: lighter;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <script type="text/javascript">
+      fetch('https://v1.hitokoto.cn/')
+        .then(async (data) => {
+          document.body.innerText = (await data.json()).hitokoto
+        })
+        .catch((err) => (document.body.innerText = err))
+    </script>
+  </body>
+</html>
