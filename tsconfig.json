@@ -11,7 +11,13 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true
   },
-  "exclude": ["node_modules", "dist", "cache", "logs"]
+  "exclude": ["log", "dist", "cache", "node_modules"]
 }

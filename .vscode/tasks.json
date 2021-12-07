@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "label": "pnpm: dev",
+      "detail": "cross-env NODE_ENV=dev nest start --watch"
+    },
+    {
+      "type": "npm",
+      "script": "format",
+      "problemMatcher": [],
+      "label": "pnpm: format",
+      "detail": "prettier --write \"src/**/*.ts\""
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": [],
+      "label": "pnpm: lint",
+      "detail": "eslint \"src/**/*.ts\" --fix"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "pnpm: build",
+      "detail": "nest build"
+    },
+    {
+      "type": "npm",
+      "script": "prod",
+      "problemMatcher": [],
+      "label": "pnpm: prod",
+      "detail": "node dist/core"
+    }
+  ]
+}

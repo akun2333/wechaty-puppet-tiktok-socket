@@ -1,10 +1,11 @@
 FROM node:alpine
-RUN npm i -g pnpm
 WORKDIR /service
+RUN npm -g i pnpm
 COPY ./package.json .
-COPY ./pnpm-lock.yaml .
-RUN pnpm install --shamefully-hoist
-COPY . .
-EXPOSE 80
+RUN pnpm i --registry=https://registry.npm.taobao.org/
+COPY ./src ./src
+COPY ./nest-cli.json .
+COPY ./tsconfig.json .
 RUN pnpm build
-CMD /bin/sh -c "pnpm prod"
+EXPOSE 80
+CMD pnpm prod

@@ -1,7 +1,5 @@
-import { Body, Controller, Get, Post, Query, Res } from "@nestjs/common";
+import { Body, Controller, Get, Post, Query } from "@nestjs/common";
 import { Socket } from "socket.io";
-import { Response } from 'express'
-import { resolve } from "path";
 import { tiktok } from "src/util";
 import { EventsGateway } from "./provides";
 import { MessageBaseDto } from './dto'
@@ -31,11 +29,6 @@ export class RootController {
     this.gateway.client[open_id] = state
     this.token[open_id] = token
     return 'Authorization succeeded'
-  }
-
-  @Get('*')
-  GetRoot(@Res() res: Response) {
-    return res.sendFile(resolve(`./public/message.html`))
   }
 
   @Post('mockHook')

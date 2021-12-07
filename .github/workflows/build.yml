@@ -1,4 +1,4 @@
-name: CICD
+name: build
 
 on:
   push:
@@ -13,7 +13,7 @@ env:
   repository_password: ${{ secrets.REPOSITORY_PASSWORD }}
 
 jobs:
-  CI:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
